@@ -118,9 +118,11 @@ P = 0 * x;
 P(ind) = Ps; %constant pressure combustion
 
 %Estimate exit pressure
-Ma = getMach_AR(1.3,Ae_to_Ath,1);
-g = 1.4;
-Pe = Ps / (1 + (g-1)/2 * Ma^2)^(g/(g-1));
+if exit_BC_supersonic == 1
+    Ma = getMach_AR(1.3,Ae_to_Ath,1);
+    g = 1.4;
+    Pe = Ps / (1 + (g-1)/2 * Ma^2)^(g/(g-1));
+end
 
 N = sum(~ind);
 P(~ind) = linspace(Ps,Pe,N); %Pressure varries linearly from combustor to exit
