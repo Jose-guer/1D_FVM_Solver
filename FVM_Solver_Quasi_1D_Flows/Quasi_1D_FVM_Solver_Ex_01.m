@@ -152,31 +152,7 @@ Vx = mdot./(rhox.*A);
 Ex = R.*Ts./(gamma-1) + 0.5.*Vx.^2;
 %}
 
-%Option 2: assume an isentropic solution
-%{
-AR = A./A_th;
-Ma = getMach_Ar(gamma,AR,0);
-
-% ind = find(A == A_th);
-% Ma_sub = getMach_Ar(gamma,AR(1:ind-1),0);
-% Ma_sup = getMach_Ar(gamma,AR(ind:end),0);
-% Ma = [Ma_sub;Ma_sup];
-
-M_in = Ma(1);
-
-T0 = Ts * (1 + (gamma-1)/2 *M_in.^2);
-P0 = Ps * (T0./Ts).^(gamma/(gamma-1));
-
-Tx = T0 ./ (1 + (gamma-1)/2 * Ma.^2);
-Px = P0 .* (Tx./T0).^(gamma/(gamma-1));
-rhox = Px./(R.*Tx);
-
-ax = sqrt(gamma*R*Tx);
-Vx = Ma.*ax;
-Ex = R.*Tx./(gamma-1) + 0.5*Vx.^2;
-%}
-
-%Option 3: use exact solution
+%Option 2: use exact solution
 %{
 rhox = interp1(xq,rho_q,x,"linear","extrap");
 Tx = interp1(xq,T_q,x,"linear","extrap");
