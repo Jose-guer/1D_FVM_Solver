@@ -1,5 +1,5 @@
 # 1D_FVM_Solver
-MATLAB implementation of a one-dimensional Finite Volume Method (FVM) solver with a Roe flux for flows with area changes, friction, and chemical reactions.
+MATLAB implementation of a first-order accurate, one-dimensional, Finite Volume Method (FVM) solver with a Roe flux, for flows with area changes, friction, and chemical reactions.
 
 ## System requirements 
 No specific version of MATLAB is required.
