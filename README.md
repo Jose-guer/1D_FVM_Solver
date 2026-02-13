@@ -11,7 +11,7 @@ The FVM solver is demonstrated for two examples.
 
  - The second is a combustor with a converging-diverging nozzle. In the combustor section chemical reactions are allowed.
 
-## Please cite this article when using code provided here in your work
+## Please cite this document when using code provided here in your work
 Guerrero, Jose I. "On Energy Conversion Processes in Rotating Detonation Combustors." PhD thesis (2026).
 
 ## Reference
